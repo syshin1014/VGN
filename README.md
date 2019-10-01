@@ -2,16 +2,41 @@
 This is the code for ["Deep Vessel Segmentation by Learning Graphical Connectivity"](https://www.sciencedirect.com/science/article/pii/S1361841519300982).
 
 ## Dependency
+* Tensorflow 1.12
+* networkx 2.0
+* scipy 1.1.0
+* mahotas 1.4.3
+* matplotlib 2.2.4
+* easydict 1.7
+* scikit-image 0.14.2
+* scikit-fmm 0.0.9
+* scikit-learn 0.19.0
 
+## Datasets
+* The VGN is evaluated on four retinal image datasets, namely the [DRIVE](https://www.isi.uu.nl/Research/Databases/DRIVE/), [STARE](http://cecas.clemson.edu/~ahoover/stare/), [CHASE_DB1](https://blogs.kingston.ac.uk/retinal/chasedb1/), and [HRF](https://www5.cs.fau.de/research/data/fundus-images/) datasets, which all are publicly available.
+* The coronary artery X-ray angiography (CA-XRA) dataset we additionally used for evaluation can not be shared regrettably.
 
-## Installation
-
+## Precomputed Results
+We provide precomputed results of the VGN on the four retinal image datasets. [[OneDrive]](https://1drv.ms/u/s!AmnLATyiwjphhZ0BquyksorE0YV7nA?e=OmHhGW)
 
 ## Testing a Model
-
+1. Download available trained models. [[OneDrive]](https://1drv.ms/u/s!AmnLATyiwjphhZ0CYhSYOqHmnQw4UQ?e=eRgvcq)
+2. Run a test script among `test_CNN.py`, `test_CNN_HRF.py`, `test_VGN.py`, or `test_VGN_HRF.py`, with appropriate input arguments including the path for the downloaded model.
 
 ## Training a Model
 
+https://1drv.ms/u/s!AmnLATyiwjphhZ0AqBHI2Y0nALUdoQ?e=NG4kVS
+
+1. Download ImageNet pretrained models
+   * VGG-16 : [https://github.com/smallcorgi/Faster-RCNN_TF](https://github.com/smallcorgi/Faster-RCNN_TF)
+   * ResNet-18,34,50,101 : [[OneDrive]](https://onedrive.live.com/?authkey=%21AM51TLQkoYZH7KQ&id=613AC2A23C01CB69%2185606&cid=613AC2A23C01CB69)
+2. Run `$ROOT/code/main/train.py` (combined mini-batch) or `$ROOT/code/main/train_alter.py` (alternating mini-batches) with appropriate input arguments, including the path for the downloaded pretrained model.
+
+`train_CNN.py`
+`train_VGN.py`
+
+
+## 
 
 ## Citation
 ```
