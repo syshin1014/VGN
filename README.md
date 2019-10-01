@@ -35,7 +35,7 @@ We use a sequential training scheme composed of an initial pretraining of the CN
 1. Run `GenGraph/make_graph_db.py`.
 
 ### VGN Training
-1. Place the generated graph ('.graph_res') and CNN results ('_prob.png') in a new directory 'args.save_root/graph'
+1. Place the generated graphs ('.graph_res') and vessel probability images ('_prob.png') inferred from the pretrained CNN in a new directory 'args.save_root/graph'
 2. Run `train_VGN.py` with appropriate input arguments including the path for the pretrained CNN model.
 
 ## Demo Videos
