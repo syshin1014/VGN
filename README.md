@@ -24,19 +24,21 @@ We provide precomputed results of the VGN on the four retinal image datasets. [[
 2. Run a test script among `test_CNN.py`, `test_CNN_HRF.py`, `test_VGN.py`, or `test_VGN_HRF.py`, with appropriate input arguments including the path for the downloaded model.
 
 ## Training a Model
+We use a sequential training scheme composed of an initial pretraining of the CNN followed by joint training, including fine-tuning of the CNN module, of the whole VGN. Before the joint training, training graphs must be constructed from vessel probability maps inferred from the pretrained CNN.
 
-https://1drv.ms/u/s!AmnLATyiwjphhZ0AqBHI2Y0nALUdoQ?e=NG4kVS
+### CNN Pretraining
+(This step can be skipped by using a pretrained model we share.)
+1. Download an ImageNet pretrained model. [[OneDrive]](https://1drv.ms/u/s!AmnLATyiwjphhZ0AqBHI2Y0nALUdoQ?e=NG4kVS)
+2. Run `train_CNN.py` with appropriate input arguments including the path for the downloaded pretrained model.
 
-1. Download ImageNet pretrained models
-   * VGG-16 : [https://github.com/smallcorgi/Faster-RCNN_TF](https://github.com/smallcorgi/Faster-RCNN_TF)
-   * ResNet-18,34,50,101 : [[OneDrive]](https://onedrive.live.com/?authkey=%21AM51TLQkoYZH7KQ&id=613AC2A23C01CB69%2185606&cid=613AC2A23C01CB69)
-2. Run `$ROOT/code/main/train.py` (combined mini-batch) or `$ROOT/code/main/train_alter.py` (alternating mini-batches) with appropriate input arguments, including the path for the downloaded pretrained model.
+### Training Graph Construction
+1. Run `GenGraph/make_graph_db.py`.
 
-`train_CNN.py`
-`train_VGN.py`
+### VGN Training
+1. Place the generated graph ('.graph_res') and CNN results ('_prob.png') in a new directory 'args.save_root/graph'
+2. Run `train_VGN.py` with appropriate input arguments including the path for the pretrained CNN model.
 
-
-## 
+## Demo Videos
 
 ## Citation
 ```
