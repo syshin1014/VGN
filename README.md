@@ -39,6 +39,9 @@ We use a sequential training scheme composed of an initial pretraining of the CN
 2. Run `train_VGN.py` with appropriate input arguments including the path for the pretrained CNN model.
 
 ## Demo Videos
+Two example results, each of which is from the STARE and CHASE_DB1 datasets. The images in each row from left to right are, the original input image, GT, result. The last column is slowly changed from the baseline CNN result to the VGN result to better show the difference.
+![](results/im0239.gif)
+![](results/Image_12R.gif)
 
 ## Citation
 ```
