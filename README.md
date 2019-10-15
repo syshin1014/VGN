@@ -2,6 +2,7 @@
 This is the code for ["Deep Vessel Segmentation by Learning Graphical Connectivity"](https://www.sciencedirect.com/science/article/pii/S1361841519300982).
 
 ## Dependency
+* Python 2.7.12
 * Tensorflow 1.12
 * networkx 2.0
 * scipy 1.1.0
